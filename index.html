@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dijital Tasarım Merkezi Kontrol Listesi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:#0588DA;--bg:#f4f7fb;--card:#fff;--text:#1f2d3d;--muted:#5f6f86;--border:#e3e9f0;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;padding:40px 16px 80px;font-family:'Ubuntu',sans-serif;background:var(--bg);color:var(--text)}
+    .container{max-width:960px;margin:0 auto}
+    h1{text-align:center;margin-bottom:56px;color:var(--primary);font-size:34px;font-weight:700}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;margin-bottom:24px}
+    .card-header{cursor:pointer}
+    .card-header h2{margin:0 0 12px;font-size:21px;color:var(--primary)}
+    .description{font-size:14.5px;line-height:1.65;color:var(--muted)}
+    .checklist{display:none;margin-top:28px}
+    .checklist.open{display:block}
+    .item{display:flex;gap:14px;margin-bottom:14px;position:relative}
+    .item input{margin-top:4px;width:18px;height:18px;accent-color:var(--primary)}
+    .item label{font-size:15px;line-height:1.55}
+    .feedback{position:absolute;right:0;top:-4px;font-size:13px;color:var(--primary);opacity:.9;animation:pop .6s ease forwards;white-space:nowrap;font-weight:500}
+    @keyframes pop{0%{opacity:0;transform:translateY(8px) scale(.95)}40%{opacity:1;transform:translateY(-2px) scale(1.05)}100%{opacity:0;transform:translateY(-14px) scale(1)}}
+  </style>
+</head>
+<body>
+<div class="container">
+<h1>Dijital Tasarım Merkezi Kontrol Listesi</h1>
+
+<!-- 1 BRIEF ALIM -->
+<div class="card"><div class="card-header" onclick="toggle(this)"><h2>1. BRIEF ALIM</h2><p class="description">İlgili tasarımcı kendine atanan projenin formunu incelemek, değerlendirmekten sorumludur. Sonrasında ilgili proje ekibi ile kick-off toplantısı gerçekleştirerek detayları ve proje takvimini netleştirir. Proje kapsamında uygulanacak tasarım metodolojilerini belirler.</p></div><div class="checklist">
+<div class="item"><input type="checkbox"><label>Proje dökümanı doldurulmuş mu?</label></div>
+<div class="item"><input type="checkbox"><label>Döküman detaylı incelemesi yapıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Varsayım ile ilerlenen alanlar var mı? İhtiyaç sorgulandı mı?</label></div>
+<div class="item"><input type="checkbox"><label>User flow çizilerek, eksik noktaların olup olmadığı tespit edildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Eksikler varsa, yazılı olarak istenildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Bu süreç yazılı olarak proje log kaydında tutuldu mu?</label></div>
+<div class="item"><input type="checkbox"><label>Tasarım süreci için varsa gerekli datalar incelendi / istenildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Proje kapsamında, nasıl bir tasarım süreci yürütüleceği belirlenip, ilgili yöneticiler ve proje paydaşlarıyla anlaşıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Eksik bilgi varsa bu projeyi yürütmeye engel mi? Değilse eksik bilgiler tamamlanana kadar projenin yürütülebilecek aşamaları ilerletildi mi?</label></div>
+</div></div>
+
+<!-- 2 PROJE YÖNETİMİ -->
+<div class="card"><div class="card-header" onclick="toggle(this)"><h2>2. PROJE YÖNETİMİ</h2><p class="description">İlgili tasarımcı kendine atanan projenin yönetiminden sorumludur. Paydaş yönetimi, kişisel haftalık takvim ve verimliliğini yönetir. İlgili toplantı notlarını tutar ve yazılı olarak kayıt altına alır.</p></div><div class="checklist">
+<div class="item"><input type="checkbox"><label>Figma’da ilgili dosya açıldı mı? Çalışılan dosyalar doğru mu?</label></div>
+<div class="item"><input type="checkbox"><label>Proje board’unda ilgili log’lar tutuluyor mu?</label></div>
+<div class="item"><input type="checkbox"><label>Toplantı notları tutuluyor mu?</label></div>
+<div class="item"><input type="checkbox"><label>“Bunu neden böyle yaptık?” sorusu 6 ay sonra cevaplanabilir mi?</label></div>
+<div class="item"><input type="checkbox"><label>Proje toplantılarında, gerekli ve kritik kişilerin katılımını gözetiliyor mu?</label></div>
+<div class="item"><input type="checkbox"><label>Direktör ve üstü rol toplantılarında sunum ve aktarım için hazırlanıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Direktör ve üstü rol toplantılarında uygunlukları sözlü olarak alındı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Çözülemeyen, beklenen veya yanıt alınamayan konular varsa; Yazılı olarak (mail) iletildi mi? Aksamanın sizden kaynaklanmadığı net şekilde belirtildi mi?</label></div>
+</div></div>
+
+<!-- 3 SUNUM VE AKTARIM -->
+<div class="card"><div class="card-header" onclick="toggle(this)"><h2>3. SUNUM VE AKTARIM</h2><p class="description">Çalışılan tasarımların, toplantı amaçları ve katılımcılar göz önünde bulundurularak anlaşılır ve verimli bir şekilde aktarılması ilgili tasarımcının sorumlulukları arasındadır. Burada da tıpkı tasarım yapılırken gözetilen, sunum / aktarım yapacağım kişinin ihtiyaç ve kaygıları neler olabilir, bu sunumda neyi amaçlıyorum soruları düşünülerek bu sürecin de tasarlanması gerekmektedir.</p></div><div class="checklist">
+<div class="item"><input type="checkbox"><label>Sunulan tasarımın wireframe, konsept ya da final çıktı olduğu net olarak anlaşılıyor mu?</label></div>
+<div class="item"><input type="checkbox"><label>Sunum başında katılımcılara ön bilgilendirme yapılarak, çalışmanın amacı aktarıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>İlgili aktarım / anlatım toplantısında, katılımcılara nasıl daha net anlatılacağının ve olası konuşulacak konu ve sorular düşünülerek anlatım şekli ve dosyası hazırlandı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Eğer mevcut bir akış değişiyorsa öncesi sonrası, neden sonuç ilişkisi kurularak sunum hazırlandı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Alternatifli sunumlarda, alternatiflerin amaçları, artı ve eksi yönleri net bir şekilde belirtilerek hazırlanıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Feedback toplantılarında, öncesinde aktarım için ön hazırlık yapıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Direktör ve üstü katılım toplantılarında sunum formatında ve bütünsel bir aktarım yapıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Direktör ve üstü anlatımlar için, toplantı içeriğine ve neler sorulup, sorgulanabilme olasılıkları düşünülüp gerekli aktarım senaryosu hazırlandı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Sunumlardaki ekranlardaki bilgilerin, metinlerin doğruluğu kontrol edildi mi?</label></div>
+</div></div>
+
+<!-- 4 UX TASARIM -->
+<div class="card"><div class="card-header" onclick="toggle(this)"><h2>4. UX TASARIM</h2><p class="description">Sadece ilgili briefte yazılana sınırlı kalmayarak, akışı ve ürün içindeki muadil akış deneyimlerini de gözeterek bütünsel bir yaklaşım sergilemelidir. İlgili business hedeflerini ve kullanıcı ihtiyaçlarını gözeterek, gerekli tasarım alternatiflerinin çalışılmalıdır. Deneyiminin yanlış olduğunu düşündüğü hiç bir ekran ya da akışın, takvim ve efor baskısı ile teslim edilmemelidir. Böyle bir durumda yöneticiler yazılı bilgilendirilmelidir. İlgili tasarımcı kendine atanan projede eğer gerekli ise, data analizi / benchmark / kullanıcı araştırması / moodboard / workshop gibi farklı yöntemler kullanması gerekiyorsa bunları öngörerek proje sürecine eklemelidir. Ekran çizmeye başlamadan önce user flow çizmelidir.</p></div><div class="checklist">
+<div class="item"><input type="checkbox"><label>İlgili tasarım methodları uygulandı mı?</label></div>
+<div class="item"><input type="checkbox"><label>İlgili datalar, ürün ekibi ile birlikte kontrol edilerek, tasarım kararlarına yansıtıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>İlgili business hedefleri net mi ve tasarıma yansıtıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Kullanıcı ihtiyaçları ve pain point’ler gözetildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>User flow çizilerek farklı kullanıcı rolleri ve farklı business case’leri için detaylı akışlar oluşturuldu mu?</label></div>
+<div class="item"><input type="checkbox"><label>Hata anları, edge case’leri belirlendi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Kullanıcının yanlış yaptığı durumlar tasarlandı mı?</label></div>
+<div class="item"><input type="checkbox"><label>En kötü senaryo tasarımı yapıldı mı? (yavaş internet, yarım kalan işlem, timeout, duplicate action)</label></div>
+<div class="item"><input type="checkbox"><label>Metinlerde ‘Lorem ipsum’ değil hangi amaçla ne tarz bir metin geleceği açıkça belirtildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Geri dönüşü olmayan aksiyonlar için; uyarı, geri alma, ikincil onay var mı?</label></div>
+<div class="item"><input type="checkbox"><label>Kullanıcı akışı yarıda kesilirse tekrar devam edebilir mi?</label></div>
+<div class="item"><input type="checkbox"><label>Ekranlardaki rakamlar tutarlı ve küsüratlı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Tasarım yaparken başlıktan sağ üstteki soru işaretine kadar tek tek ekranlar sorgulandı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Eğer search, filtre gibi alanlar varsa klavye açık gösterimi ve geçiş ekranları flowlarda gösterildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Eğer mevcut bir akış değişiyorsa eski ve yeni karşılaştırmalı ve neden sonuç ile gösterildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Ürün içerisinde farklı hangi akışlara / ürünlere / ekiplere temas edebilir kontrolü yapıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>İlgili kesişimler göz önünde bulunduruldu mu?</label></div>
+<div class="item"><input type="checkbox"><label>Mevcut canlıdaki akışlar ile deneyim tutarlılığı kontrol edildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Paralelde çalışılan henüz canlıya çıkmamış projeler ile tutarlılığı kontrol edildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>İlgili ekipler bilgilendirildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Mevcut ve gelecek olası business case’leri göz önüne alındı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Birden fazla alternatif çalışıldığı durumda, her bir alternatifin amacı, farkı ve artı-eksisi belirtildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Hangi dataların tutulması gerektiği belirlenip ürün ve yazılım ekipleriyle kararlaştırıldı mı?</label></div>
+</div></div>
+
+<!-- 5 UI TASARIM -->
+<div class="card"><div class="card-header" onclick="toggle(this)"><h2>5. UI TASARIM</h2><p class="description">Tasarım standartlarına uygun, farklı ekran boyutları ve işletim sistemleri düşünülmüş, standartlaştırılmış görsel tasarım çıktı üretilmesinden sorumludur. Yeni bir component tasarımı, ancak mevcutların ihtiyacı karşılamadığı durumlarda yapılmalıdır. Yazılıma teslim edilecek dosyada pixel-perfect, herhangi bir soru işaretine mahal vermeyen detayda ve anlatımda çıktı üretilmelidir.</p></div><div class="checklist">
+<div class="item"><input type="checkbox"><label>UI Kit’te bulunan mevcut component kullanıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Teslim edilen ekran pixel-perfect mi?</label></div>
+<div class="item"><input type="checkbox"><label>Yeni component kullanımı varsa ekibin bilgilendirilip, kitte güncellendi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Sayfa layout kuralları uygulandı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Edge case’ler dikkate alındı mı?</label></div>
+<div class="item"><input type="checkbox"><label>En uzun bilgi setlerinin en küçük ekran boyutları gösterimleri net mi?</label></div>
+<div class="item"><input type="checkbox"><label>Öngörülemeyecek bilgilerin olduğu alanların alt satıra geçme, uzama, 3 noktaya düşme kuralları belirlendi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Farklı bir font kullanılmadığına dikkat edildi mi? Eğer zorunluysa hukuki onay alındı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Responsive davranışlar net mi?</label></div>
+<div class="item"><input type="checkbox"><label>Geliştiricinin yanlış yorumlayabileceği noktalar açıkça işaretlendi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Metinler minimum font size ve line-height kriterlerine uygun mu?</label></div>
+<div class="item"><input type="checkbox"><label>Kullanılan renkler tanımlı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Kontrast, okunurluk ve erişilebilirlikleri kontrol edildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Farklı işletim sistemlerinde ayrışan noktalar belirlendi mi?</label></div>
+</div></div>
+
+<!-- 6 UAT PILOT -->
+<div class="card"><div class="card-header" onclick="toggle(this)"><h2>6. UAT – PİLOT AŞAMASI</h2><p class="description">Teslim edilen tasarımların, UAT ve Pilot süreçlerinin takip edilmesi, ekran ve deneyimlerin kontrol edilerek, problem ve hataların giderilmesi ilgili tasarımcının sorumluluğundadır. Kritik projelerde bütün UAT sürecine dahil olunması, standart projelerde ise ürün ekibinden alınacak bilgi ve ekranlar ile kontrollerin sağlanması gerekmektedir. Doğru olmadığını düşünülen bir pilot veya canlı kararı alındığında yazılı görüş bildirilmelidir.</p></div><div class="checklist">
+<div class="item"><input type="checkbox"><label>UAT’e girilecek scope net mi?</label></div>
+<div class="item"><input type="checkbox"><label>iOS ve Android’te happy path, no data ve hata caseleri kontrol edildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Spacing, alignment ve hiyerarşi doğru mu?</label></div>
+<div class="item"><input type="checkbox"><label>Typography değerleri tasarıma uygun mu?</label></div>
+<div class="item"><input type="checkbox"><label>Renkler ve kontrastlar doğru mu?</label></div>
+<div class="item"><input type="checkbox"><label>Icon, görsel ve asset’ler doğru kullanılmış mı?</label></div>
+<div class="item"><input type="checkbox"><label>Farklı ekran boyutlarında kontroller yapıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Beklenmeyen ekstra veya eksik adımlar var mı?</label></div>
+<div class="item"><input type="checkbox"><label>Loading, success, error ve empty state’ler doğru mu?</label></div>
+<div class="item"><input type="checkbox"><label>Tap / click alanları yeterli mi?</label></div>
+<div class="item"><input type="checkbox"><label>Double tap, swipe ve hızlı aksiyonlar sorun yaratıyor mu?</label></div>
+<div class="item"><input type="checkbox"><label>Eksikler yazılı olarak ilgili ekiplere bildirildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>iOS ve Android davranışları platform normlarına uygun mu?</label></div>
+<div class="item"><input type="checkbox"><label>Native gesture’lar doğru çalışıyor mu?</label></div>
+<div class="item"><input type="checkbox"><label>Canlıya çıkması riskli görülen noktalar açıkça işaretlendi mi?</label></div>
+<div class="item"><input type="checkbox"><label>Bu riskler paydaşlarla yazılı paylaşıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>UX / UI itirazları dokümante edildi mi?</label></div>
+<div class="item"><input type="checkbox"><label>UAT sırasında tasarım değiştiyse Figma’ya yansıtıldı mı?</label></div>
+<div class="item"><input type="checkbox"><label>Pilot aşamasında kullanıcılardan feedback toplandı mı?</label></div>
+</div></div>
+
+<!-- 7 CANLI SONRASI -->
+<div class="card"><div class="card-header" onclick="toggle(this)"><h2>7. CANLI SONRASI TAKİP</h2><p class="description">Tasarımcı çalıştığı projenin etkilerini özellikle kritik projelerden sonra canlıya çıktıktan sonra da gözlemlemelidir. Mevcut projelerde takip edilmesi istenilen metriklerin canlı öncesi alınarak kıyaslanabilmesi sağlanmalıdır. Aşağıdaki metrikler proje bazında değişkenlik gösterebilir.</p></div><div class="checklist">
+<div class="item"><input type="checkbox"><label>Herhangi bir kullanıcı şikayeti var mı?</label></div>
+<div class="item"><input type="checkbox"><label>DAU / MAU (Günlük / Aylık Aktif Kullanıcı Oranı) takip edilebilir mi?</label></div>
+<div class="item"><input type="checkbox"><label>Retention Rate (Kullanıcı Tutma Oranı)Belirli bir süre sonra (Day 1 / Day 7 / Day 30) kullanıcıların ürüne geri dönme oranını ölçebilir miyiz?</label></div>
+<div class="item"><input type="checkbox"><label>Drop-off Rate (Kullanıcı Kaybı Oranı) Akışta kullanıcıların hangi adımda terk ettiğini ölçebilir miyiz?</label></div>
+<div class="item"><input type="checkbox"><label>Cohort Analizi,Kullanıcıları belirli başlangıç tarihleri veya davranışlara göre gruplandırarak, tasarım öncesi ve sonrası performansı karşılaştırabilir miyiz?</label></div>
+<div class="item"><input type="checkbox"><label>Task Completion Rate (Görev Tamamlama Oranı)Kullanıcıların belirli bir görevi (ör. ödeme yapmak, form doldurmak) başarıyla tamamlayabilme oranını ölçebilir miyiz?</label></div>
+<div class="item"><input type="checkbox"><label>Time on Task (Görev Tamamlama Süresi) Kullanıcının bir görevi ne kadar sürede tamamladığını ölçebilir miyiz?</label></div>
+<div class="item"><input type="checkbox"><label>Error Rate,Kullanıcıların nerelerde ve hangi yüzdeyle hata aldığını ölçebilir miyiz?</label></div>
+<div class="item"><input type="checkbox"><label>Click / Tap Through Rate ,Butonların, linklerin ve CTA’ların ne kadar tıklandığını ölçebilir miyiz?</label></div>
+<div class="item"><input type="checkbox"><label>Rage Click,Kullanıcının aynı yere üst üste tıklamasını ölçebilir miyiz?</label></div>
+<div class="item"><input type="checkbox"><label>Kullanıcının aslında dijitalden yapabileceği bir işlem için, şikayet/ müşteri temsilcisi arama sayılarına erişebilir miyiz?
+</label></div>
+</div></div>
+
+</div>
+<script>
+const reactions=['👍 Harika','❤️ Çok iyi','😄 Gayet net','🚀 İşte gerçek bir tasarımcı'];
+function toggle(el){el.nextElementSibling.classList.toggle('open')}
+document.querySelectorAll('input').forEach(cb=>cb.addEventListener('change',e=>{if(!e.target.checked)return;const f=document.createElement('div');f.className='feedback';f.textContent=reactions[Math.floor(Math.random()*reactions.length)];e.target.parentElement.appendChild(f);setTimeout(()=>f.remove(),800)}));
+</script>
+</body>
+</html>
